@@ -1,0 +1,36 @@
+<!-- Plugin Configuration File: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>com.flowmodoro.pws.flowmodoro</id>
+    <name>Flowmodoro</name>
+    <vendor>pws</vendor>
+
+    <description><![CDATA[
+        Flowmodoro technique timer: work until you lose focus, then take a proportional break.
+        Supports configurable break fractions, long breaks, and sound notifications.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <resource-bundle>messages.FlowmodoroBundle</resource-bundle>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="Flowmodoro"
+                    factoryClass="com.flowmodoro.pws.flowmodoro.FlowmodoroToolWindowFactory"
+                    anchor="right"
+                    icon="AllIcons.Vcs.History"/>
+
+        <applicationService
+            serviceImplementation="com.flowmodoro.pws.flowmodoro.FlowmodoroSettings"/>
+
+        <applicationConfigurable
+            parentId="tools"
+            instance="com.flowmodoro.pws.flowmodoro.FlowmodoroSettingsConfigurable"
+            id="com.flowmodoro.pws.flowmodoro.settings"
+            displayName="Flowmodoro"/>
+
+        <notificationGroup
+            id="Flowmodoro"
+            displayType="BALLOON"
+            isLogByDefault="true"/>
+    </extensions>
+</idea-plugin>
