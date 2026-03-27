@@ -20,7 +20,7 @@ Unlike Pomodoro, there are no fixed work intervals. Every couple of break interv
 - **Task notes** | jot down what you're working on, persisted across IDE restarts
 - **Sound notification** | optional audio cue when a break ends
 - **IDE notification** | balloon notification when a break ends, even if the tool window is hidden
-~~~~
+
 ## Settings
 
 Configure via `Settings > Tools > Flowmodoro`:
